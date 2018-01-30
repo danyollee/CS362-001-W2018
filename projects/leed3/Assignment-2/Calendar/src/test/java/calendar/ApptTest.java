@@ -125,6 +125,7 @@ public class ApptTest {
 	 @Test
 	public void test06() throws Throwable {
 	 	Appt appt = new Appt (1, 1, 1, 1, 2018, "test", "desc");
-		assertEquals("	1/1/2018 at 1:1am ,test, desc", appt.toString());
+	 	String test = "\t" + 1 + "/" + 1 + "/" + 2018 + " at " + 1 + ":" + 1 + "am" + ", " + "test, " + "desc" + "\n";
+		assertEquals(test, appt.toString());
 	 }
 }
