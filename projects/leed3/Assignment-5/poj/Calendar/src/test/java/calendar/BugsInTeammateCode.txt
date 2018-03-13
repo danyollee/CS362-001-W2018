@@ -1,0 +1,46 @@
+*** BUGS FOUND IN CODE ***
+
+1. In the file "Appt.java" on line 115, there was a logic bug introduced where the bounds changed from 0-23, to, 1-24. 
+
+    private void isValid() {
+    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
+    				
+    	if(startHour<1 || startHour>24)
+    		this.valid=false;
+    	else
+        	if(startMinute<0 || startMinute>59)
+        		this.valid=false;
+        	else
+            	if(startDay<1 || startDay>NumDaysInMonth)
+            		this.valid=false;
+            	else
+                	if(startMonth<1 || startMonth>12)
+                		this.valid=false;
+                	else
+                		this.valid=true;
+    }
+
+
+
+2. In the file, "CalendarUtil.java" from lines 46-54, there was another logic error where all the code was commented out.
+
+	public static boolean IsLeapYear(int year) {
+	//if the year is a multiple of 100, the year is a leap year if its also a multiple of 400
+		//if ((year % 100) == 0) {
+			
+			//if((year % 400) == 0) {
+				//return true;
+			//}
+			//else{
+				//return false;
+			//}
+		//}
+	
+		//year is also leap year if multiple of 4
+		//if ((year % 4) == 0) {
+			//return true;
+		//}
+		//else{
+			//return false;
+		//}
+	}
